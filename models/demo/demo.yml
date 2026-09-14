@@ -25,8 +25,12 @@ models:
   - name: sales
     description: "DBT model for the sales table"  
   - name: product
-    description: "DBT Model for the product table"     
-
+    description: "DBT Model for the product table" 
+  - name: clean_orders
+    description: "DBT ephermeral model for the clean order"        
+  - name: final_orders
+    description: "DBT model for the finale orders model"
+    
 sources:
   - name: employee
     database: DBT_DB
@@ -47,4 +51,9 @@ sources:
     database: DBT_DB
     schema: PUBLIC
     tables:
-      - name: PRODUCT_SRC     
+      - name: PRODUCT_SRC 
+  - name: orders
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: BASE_ORDERS        
